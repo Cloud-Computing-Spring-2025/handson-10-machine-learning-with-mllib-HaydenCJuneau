@@ -144,3 +144,31 @@ maxIter=20
 spark-submit churn_prediction.py
 ```
 ### Make sure to include your original ouput and explain the code
+---
+### Task 1
+![Task 1 Output](output/task1_output.png)<br>
+In this task we set up our data for fitting.
+We first fix up invalid values by replacing blanks with zeroes.
+Then we set up indexers for numeric and non-numeric columns.
+We use one hot encoding to create some features, and then vectorize all of our features.
+Additionally, we index our Churn column to get a good label column.
+
+---
+![Task 2 Output](output/task2_output.png)<br>
+In this task we perform a Logistic regression to start making some predictions.
+We do a basic evaluation of the model through some evaluators.
+We determine the area under the ROC curve and the accuracy of the model.
+Without tuning any hyperparameters, the accuracy is quite low.
+
+---
+![Task 3 Output](output/task3_output.png)<br>
+In task 3 we apply the chi-square test to find the most important features in the model.
+There is a single function to perform this calculation, so it is not as complex as the other tasks.
+
+---
+![Task 4 Output](output/task4_output.png)<br>
+
+In the final task we evaluate different classification strategies.
+We use different types of regressions, and at the same time, tweak their hyperparameters.
+Not only does this allow us to see the highest performing model (GBT), but also which hyperparams are the most important and at which values they perform the best.
+We achieve this comparison through a nested function, which takes the model, and param grid, and does cross testing to find the highest performing parameters.
